@@ -30,7 +30,7 @@ public class GutenbergTask extends TimerTask {
         Document downloadedDocument;
         {
             try {
-                downloadedDocument = downloader.handleDownload(1);
+                downloadedDocument = downloader.handleDownload(bookID);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
