@@ -21,7 +21,7 @@ public class MetadataExtractor {
     }
 
     private static String extractTitle(String text) {
-        Pattern pattern = Pattern.compile("Title: (.+) Author:");
+        Pattern pattern = Pattern.compile("Title: (.+)");
         Matcher matcher = pattern.matcher(text);
         if (matcher.find()) {
             return matcher.group(1);
@@ -30,7 +30,7 @@ public class MetadataExtractor {
     }
 
     private static String extractAuthor(String text) {
-        Pattern pattern = Pattern.compile("Author: (.+) Release date:");
+        Pattern pattern = Pattern.compile("Author: (.+)");
         Matcher matcher = pattern.matcher(text);
         if (matcher.find()) {
             return matcher.group(1);
@@ -39,7 +39,7 @@ public class MetadataExtractor {
     }
 
     private static Date extractReleaseDate(String text) {
-        Pattern pattern = Pattern.compile("Release date: (\\w+ \\d+, \\d+)");
+        Pattern pattern = Pattern.compile("Release Date: (\\w+ \\d+, \\d+)");
         Matcher matcher = pattern.matcher(text);
         if (matcher.find()) {
             String releaseDateString = matcher.group(1);
@@ -54,7 +54,7 @@ public class MetadataExtractor {
     }
 
     private static String extractLanguage(String text) {
-        Pattern pattern = Pattern.compile("Language: (\\w+)\\s");
+        Pattern pattern = Pattern.compile("Language: (.+)");
         Matcher matcher = pattern.matcher(text);
         if (matcher.find()) {
             return matcher.group(1);

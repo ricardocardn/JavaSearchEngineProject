@@ -46,10 +46,11 @@ public class FileProcessor {
 
         Writer writer = new Writer(Path.of(listenedPath + "/Content"),
                 Path.of(listenedPath + "/Metadata"),
-                Path.of("./Cleaner/src/main/resources/cleanEvents"));
+                Path.of("./src/main/resources/cleanEvents"));
 
         writer.writeToDatalake(cleaned_Content, filePath);
         writer.writeMetadataToDatalake(content.get(1), filePath);
+        writer.writeEvent(filePath);
 
         eventPublisher.publish("/Content/" + filePath);
     }

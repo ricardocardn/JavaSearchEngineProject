@@ -1,0 +1,17 @@
+org/ulpgc/indexer/controller/indexers/InvertedIndexCloud.class
+org/ulpgc/indexer/controller/Consumer.class
+org/ulpgc/indexer/controller/readers/ContentReader.class
+org/ulpgc/indexer/controller/Publisher.class
+org/ulpgc/indexer/controller/InvertedIndexReader.class
+org/ulpgc/indexer/Main.class
+org/ulpgc/indexer/controller/readers/ReaderThread.class
+org/ulpgc/indexer/controller/readers/InvertedIndexReaderCloud.class
+org/ulpgc/indexer/model/FileEvent.class
+org/ulpgc/indexer/controller/indexers/InvertedIndexWriterImpl.class
+org/ulpgc/indexer/controller/InvertedIndexWriter.class
+org/ulpgc/indexer/controller/message/broker/EventPublisher.class
+org/ulpgc/indexer/controller/readers/InvertedIndexReaderImpl.class
+org/ulpgc/indexer/view/API.class
+org/ulpgc/indexer/controller/Controller.class
+org/ulpgc/indexer/controller/message/broker/EventConsumer.class
+org/ulpgc/indexer/controller/indexers/IndexerThread.class

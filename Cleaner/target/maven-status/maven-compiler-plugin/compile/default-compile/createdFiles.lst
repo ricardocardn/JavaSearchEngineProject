@@ -1,0 +1,17 @@
+org/ulpgc/cleaner/Main.class
+org/ulpgc/cleaner/controller/reader/Reader.class
+org/ulpgc/cleaner/controller/message/brocker/EventConsumer.class
+org/ulpgc/cleaner/view/APIController.class
+org/ulpgc/cleaner/controller/FileProcessor.class
+org/ulpgc/cleaner/stopwords/CustomStopwordProvider.class
+org/ulpgc/cleaner/model/WriteEvent.class
+org/ulpgc/cleaner/stopwords/StopwordProvider.class
+org/ulpgc/cleaner/controller/Consumer.class
+org/ulpgc/cleaner/controller/message/brocker/EventPublisher.class
+org/ulpgc/cleaner/controller/writer/Writer.class
+org/ulpgc/cleaner/view/API.class
+org/ulpgc/cleaner/controller/Publisher.class
+org/ulpgc/cleaner/controller/process/Cleaner.class
+org/ulpgc/cleaner/controller/Controller.class
+org/ulpgc/cleaner/controller/process/ParseFiles.class
+org/ulpgc/cleaner/stopwords/StopwordRemover.class

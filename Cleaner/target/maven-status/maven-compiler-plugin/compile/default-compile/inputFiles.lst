@@ -1,0 +1,17 @@
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/process/Cleaner.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/model/WriteEvent.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/Consumer.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/message/brocker/EventConsumer.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/stopwords/StopwordProvider.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/writer/Writer.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/process/ParseFiles.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/view/APIController.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/stopwords/StopwordRemover.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/reader/Reader.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/message/brocker/EventPublisher.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/Controller.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/Publisher.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/view/API.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/controller/FileProcessor.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/stopwords/CustomStopwordProvider.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProject/Cleaner/src/main/java/org/ulpgc/cleaner/Main.java

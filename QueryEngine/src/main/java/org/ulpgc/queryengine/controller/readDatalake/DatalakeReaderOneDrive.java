@@ -24,13 +24,16 @@ public class DatalakeReaderOneDrive{
 
     public static MetadataBook readMetadata(String idBook) throws Exception {
         Path filePath = Path.of(metadataPath + "/" + idBook);
+
         String content = Reader.readFileContent(filePath);
         return MetadataExtractor.extractMetadata(content);
     }
 
+    //Read content book
     public static String readContent(String idBook) throws Exception {
         Path filePath = Path.of(contentPath + "/" + idBook);
-        return Reader.readFileContent(filePath);
+        String content = Reader.readFileContent(filePath);
+        return content;
     }
 
     public static Book readRawBook(String idBook) throws Exception {

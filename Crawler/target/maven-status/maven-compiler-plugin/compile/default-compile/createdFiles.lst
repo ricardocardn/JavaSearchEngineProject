@@ -1,0 +1,13 @@
+org/crawler/downloadHandlers/GutenbergDownloadHandler.class
+org/crawler/message/broker/Publisher.class
+org/crawler/schedulerTasks/GutenbergTask.class
+org/crawler/fileHandlers/LocalFileHandler.class
+org/crawler/controllers/CrawlerController.class
+org/crawler/message/broker/EventPublisher.class
+org/crawler/schedulers/LocalTaskScheduler.class
+org/ulpgc/crawler/Main.class
+org/crawler/fileHandlers/FileHandler.class
+org/crawler/Main.class
+org/crawler/api/CrawlerAPI.class
+org/crawler/schedulers/Scheduler.class
+org/crawler/downloadHandlers/DownloadHandler.class

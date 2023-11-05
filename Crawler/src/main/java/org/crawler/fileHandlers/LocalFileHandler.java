@@ -12,8 +12,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class LocalFileHandler implements FileHandler{
-
-    private static final String DOCUMENT_REPOSITORY_PATH = "C:\\Users\\carde\\OneDrive - Universidad de Las Palmas de Gran Canaria\\Documents\\DocumentsRepository\\RawBooks\\";
+    private static final String DOCUMENT_REPOSITORY_PATH = "./DocumentsRepository/RawBooks/";
     private final Publisher filePublisher;
 
     public LocalFileHandler() throws Exception {
@@ -29,7 +28,7 @@ public class LocalFileHandler implements FileHandler{
     private void publishFileAddition(int bookID) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDate = sdf.format(new Date());
-        filePublisher.publish(bookID + ".txt");
+        filePublisher.publish( bookID + ".txt");
     }
 
     public int getLastFileIdInLastDirectory() {
@@ -39,7 +38,7 @@ public class LocalFileHandler implements FileHandler{
             Arrays.sort(filesInLastDirectory, (file1, file2) -> Long.compare(file2.lastModified(), file1.lastModified()));
             return Integer.parseInt(filesInLastDirectory[0].getName().replace(".txt", ""));
         } else {
-            return -1;
+            return 0;
         }
 
     }

@@ -29,6 +29,7 @@ public class Writer {
             writer.write(text);
             writer.close();
             fileWriter.close();
+            System.out.println("Saved the book " + idBook);
 
         } catch (IOException e) {
             throw new RuntimeException(e);

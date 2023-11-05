@@ -1,0 +1,13 @@
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/message/broker/EventPublisher.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/schedulers/Scheduler.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/ulpgc/crawler/Main.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/fileHandlers/FileHandler.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/api/CrawlerAPI.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/schedulers/LocalTaskScheduler.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/downloadHandlers/DownloadHandler.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/fileHandlers/LocalFileHandler.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/Main.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/controllers/CrawlerController.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/schedulerTasks/GutenbergTask.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/message/broker/Publisher.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Crawler/src/main/java/org/crawler/downloadHandlers/GutenbergDownloadHandler.java

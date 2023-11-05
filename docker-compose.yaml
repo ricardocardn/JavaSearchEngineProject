@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  mq-container:
+    image: breznadam/mq-container
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    container_name: mq-container
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://mq-container:8161"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+  crawler:
+    image: breznadam/crawler
+    volumes:
+      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
+    depends_on:
+      mq-container:
+        condition: service_healthy
+  
+  cleaner:
+    image: breznadam/cleaner
+    volumes:
+      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
+    depends_on:
+      mq-container:
+        condition: service_healthy
+
+  indexer:
+    image: breznadam/indexer-cloud
+    volumes:
+      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
+    depends_on:
+      mq-container:
+        condition: service_healthy
+  
+
+  queryengine:
+    image: breznadam/queryengine
+    ports:
+      - "80:8080"
+    volumes:
+      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
+    depends_on:
+      mq-container:
+        condition: service_healthy
+
+
+ 
+
+

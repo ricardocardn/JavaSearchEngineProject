@@ -10,7 +10,7 @@ public class ParseFiles {
         List<String> contentSplit = new ArrayList<>();
         String[] parts = content.split("\\*\\*\\*");
 
-        String metadata = parts[0] + "***" + parts[1] + "***" + "\n" + "***" + parts[3] + "***" + parts[4];
+        String metadata = parts[0]; // + "***" + parts[1] + "***" + "\n" + "***" + parts[3] + "***" + parts[4];
         String contentText = parts[2].toLowerCase();
 
         contentSplit.add(contentText);

@@ -1,0 +1,17 @@
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/indexers/InvertedIndexWriterImpl.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/view/API.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/Controller.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/indexers/IndexerThread.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/readers/InvertedIndexReaderCloud.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/InvertedIndexWriter.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/Main.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/Publisher.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/indexers/InvertedIndexCloud.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/readers/ReaderThread.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/InvertedIndexReader.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/readers/InvertedIndexReaderImpl.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/message/broker/EventPublisher.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/message/broker/EventConsumer.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/Consumer.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/controller/readers/ContentReader.java
+/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Indexer/src/main/java/org/ulpgc/indexer/model/FileEvent.java
