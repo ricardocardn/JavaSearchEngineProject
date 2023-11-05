@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc4051c3-72d3-464c-aa9b-6d76884de6d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Crawler/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/13.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/14.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/15.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/DocumentsRepository/2023-10-20/9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/src/main/java/org/ulpgc/crawler/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/ulpgc/crawler/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/crawler.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/activemq-client-5.17.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/geronimo-j2ee-management_1.1_spec-1.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/geronimo-jms_1.1_spec-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/hawtbuf-1.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/javax.servlet-api-3.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-client-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-http-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-io-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-security-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-server-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-servlet-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-util-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-util-ajax-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-webapp-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jetty-xml-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/jsoup-1.15.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/slf4j-api-1.7.36.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/spark-core-2.9.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/websocket-api-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/websocket-client-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/websocket-common-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/websocket-server-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/libs/websocket-servlet-9.4.48.v20220622.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crawler/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Indexer/.idea/Indexer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/EventListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/message/brocker/EventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/message/brocker/EventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/message/brocker/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/message/brocker/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/process/ParseFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/process/ParseFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/reader/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/reader/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/writer/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/controller/writer/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/view/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/cleaner/view/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/src/main/java/org/crawler/fileHandlers/LocalFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/src/main/java/org/crawler/fileHandlers/LocalFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/src/main/java/org/crawler/message/broker/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/src/main/java/org/crawler/message/broker/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/src/main/java/org/crawler/schedulerTasks/GutenbergTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/src/main/java/org/crawler/schedulerTasks/GutenbergTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/api/CrawlerAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/api/CrawlerAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/controllers/CrawlerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/controllers/CrawlerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/downloadHandlers/DownloadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/downloadHandlers/DownloadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/downloadHandlers/GutenbergDownloadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/downloadHandlers/GutenbergDownloadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/fileHandlers/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/fileHandlers/FileHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/fileHandlers/LocalFileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/fileHandlers/LocalFileHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/message/broker/EventPublisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/message/broker/EventPublisher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/message/broker/Publisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/message/broker/Publisher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/schedulerTasks/GutenbergTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/schedulerTasks/GutenbergTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/schedulers/LocalTaskScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/schedulers/LocalTaskScheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/schedulers/Scheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Crawler/target/classes/org/crawler/schedulers/Scheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indexer/src/main/java/org/ulpgc/indexer/controller/message/broker/EventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Indexer/src/main/java/org/ulpgc/indexer/controller/message/broker/EventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indexer/src/main/java/org/ulpgc/indexer/controller/message/broker/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Indexer/src/main/java/org/ulpgc/indexer/controller/message/broker/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indexer/src/main/java/org/ulpgc/indexer/controller/readers/ReaderThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Indexer/src/main/java/org/ulpgc/indexer/controller/readers/ReaderThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QueryEngine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../QueryEngine/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2XgCBxCbwb1k0PeOgsWAMYTm4de" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/adambreznen/ULPGC/JavaSearchEngineProjectLocal/Cleaner",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc4051c3-72d3-464c-aa9b-6d76884de6d0" name="Changes" comment="" />
+      <created>1699041203682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699041203682</updated>
+      <workItem from="1699041204758" duration="15360000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
