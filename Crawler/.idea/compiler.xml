@@ -9,6 +9,8 @@
         <module name="QueryEngine" />
         <module name="Indexer" />
         <module name="Crawler" />
+        <module name="UserService" />
+        <module name="ApiGateway" />
         <module name="Cleaner" />
       </profile>
     </annotationProcessing>
