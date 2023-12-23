@@ -1,5 +1,6 @@
 package api;
 
+import com.google.gson.Gson;
 import controller.MongoConnection;
 import controller.bookhandler.DatamartBookHandler;
 import controller.bookhandler.MongoBookHandler;
@@ -30,19 +31,20 @@ public class APIController {
 
     public void run() {
         port(8080);
-        getLogin();
+        login();
         getUserName();
         postDocument();
+        getDocuments();
+        logout();
     }
 
-    private void getLogin() {
+    private void login() {
         get("user/login", (req, res) -> {
             String session = logger.logUser(req.queryParams("username"), req.queryParams("password"));
             if (session != null) {
                 res.cookie("Session", session);
                 return "User logged successfully";
             } else {
-                res.status(400);
                 return "The given credentials are incorrect";
             }
         });
@@ -59,7 +61,6 @@ public class APIController {
                 return "Your user name is: " + user.username();
 
             } catch (Exception e) {
-                res.status(400);
                 return e.getMessage();
             }
 
@@ -67,16 +68,16 @@ public class APIController {
     }
 
     private void postDocument() {
-        get("user/post", (req, res) -> {
+        post("user/post", (req, res) -> {
             String session = req.cookie("Session");
             try {
                 User user = sessionHandler.hasValidSession(session);
                 if (user == null)
                     return "User logged out";
 
-                String name = req.queryParams("name");
+                String name = "u_" + user.username() + "_" + req.queryParams("name");
                 Boolean status = Boolean.valueOf(req.queryParams("status"));
-                String content = req.queryParams("content");
+                String content = req.body();
 
                 Book book = new Book(name, status, content);
                 bookHandler.addBookToUser(user, book);
@@ -86,10 +87,33 @@ public class APIController {
                         user.username());
 
             } catch (Exception e) {
-                res.status(400);
                 return e.getMessage();
             }
 
+        });
+    }
+
+    private void getDocuments() {
+        get("user/books", (req, res) -> {
+            String session = req.cookie("Session");
+            try {
+                User user = sessionHandler.hasValidSession(session);
+                if (user == null)
+                    return "User logged out";
+
+                return new Gson().toJson(bookHandler.getUserBooks(user));
+
+            } catch (Exception e) {
+                return e.getMessage();
+            }
+
+        });
+    }
+
+    private void logout() {
+        get("user/logout", (req, res) -> {
+            res.cookie("Session","");
+            return "Logged out correctly";
         });
     }
 }

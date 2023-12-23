@@ -3,8 +3,7 @@ package api;
 import controller.ConnectionHandler;
 import controller.connections.HTTPConnectionHandler;
 
-import static spark.Spark.get;
-import static spark.Spark.port;
+import static spark.Spark.*;
 
 public class UserAPIController {
     private final String USER_SERVICE_API;
@@ -24,20 +23,32 @@ public class UserAPIController {
         userLogin();
         userName();
         postBook();
+        getBooks();
+        userLogout();
     }
 
     private void userLogin() {
         get("user/login", (req, res) ->
-                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/login", req, res));
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/login", req, res, "GET"));
     }
 
     private void userName() {
         get("user/name", (req, res) ->
-                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/name", req, res));
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/name", req, res, "GET"));
     }
 
     private void postBook() {
-        get("user/post", (req, res) ->
-                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/post", req, res));
+        post("user/post", (req, res) ->
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/post", req, res, "POST"));
+    }
+
+    private void getBooks() {
+        get("user/books", (req, res) ->
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/books", req, res, "GET"));
+    }
+
+    private void userLogout() {
+        get("user/logout", (req, res) ->
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/logout", req, res, "GET"));
     }
 }

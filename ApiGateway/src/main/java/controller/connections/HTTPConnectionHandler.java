@@ -4,9 +4,13 @@ import controller.ConnectionHandler;
 import spark.Request;
 import spark.Response;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -14,15 +18,18 @@ public class HTTPConnectionHandler implements ConnectionHandler {
     public HTTPConnectionHandler() {}
 
     @Override
-    public String makeUrlRequest(String apiUrl, Request request, Response response) {
+    public String makeUrlRequest(String apiUrl, Request request, Response response, String method) {
         try {
             String finalUrl = buildUrlWithQueryParams(apiUrl, request.queryMap().toMap());
             System.out.println(finalUrl);
 
             URL url = new URL(finalUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+            connection.setRequestMethod(method);
             setSession(request, connection);
+
+            if (method.equals("POST"))
+                setConnectionBody(request, connection);
 
             int responseCode = connection.getResponseCode();
 
@@ -44,6 +51,16 @@ public class HTTPConnectionHandler implements ConnectionHandler {
         }
 
         return "";
+    }
+
+    private void setConnectionBody(Request request, HttpURLConnection connection) throws IOException {
+        connection.setDoOutput(true);
+
+        connection.setUseCaches( false );
+        try( DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+            wr.write(request.bodyAsBytes());
+        }
+
     }
 
     private void setSession(Request request, HttpURLConnection connection) {

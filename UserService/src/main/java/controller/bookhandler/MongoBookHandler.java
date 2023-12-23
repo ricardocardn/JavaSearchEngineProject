@@ -3,6 +3,7 @@ package controller.bookhandler;
 import com.mongodb.client.model.Filters;
 import controller.MongoConnection;
 import model.Book;
+import model.BookInfo;
 import model.User;
 import org.bson.Document;
 
@@ -13,13 +14,30 @@ public record MongoBookHandler(MongoConnection datamartConnection) implements Da
     @Override
     public void addBookToUser(User user, Book book) {
         Document userDocument = datamartConnection.collection().find(Filters.eq("username", user.username())).first();
-        System.out.println(userDocument.get("username"));
 
         if (userDocument != null) {
             List<Document> existingDocuments = getDocuments(userDocument);
             checkIfExists(book, existingDocuments);
             setNewBook(user, book, existingDocuments);
         }
+    }
+
+    @Override
+    public List<BookInfo> getUserBooks(User user) {
+        Document userDocument = datamartConnection.collection().find(Filters.eq("username", user.username())).first();
+
+        List<BookInfo> userBooks = new ArrayList<>();
+        if (userDocument != null) {
+            List<Document> existingDocuments = getDocuments(userDocument);
+            for (Document existingDocument : existingDocuments) {
+                userBooks.add(new BookInfo(
+                        (String) existingDocument.get("name"),
+                        (Boolean) existingDocument.get("status")
+                ));
+            }
+        }
+
+        return userBooks;
     }
 
     private void checkIfExists(Book book, List<Document> existingDocuments) {
@@ -32,7 +50,8 @@ public record MongoBookHandler(MongoConnection datamartConnection) implements Da
     private void setNewBook(User user, Book book, List<Document> existingDocuments) {
         Document newDocument = new Document()
                 .append("name", book.name())
-                .append("status", book.status());
+                .append("status", book.status())
+                        .append("content", book.content());
 
         existingDocuments.add(newDocument);
 
