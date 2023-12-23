@@ -23,6 +23,7 @@ public class UserAPIController {
     private void handleUserAPI() {
         userLogin();
         userName();
+        postBook();
     }
 
     private void userLogin() {
@@ -33,5 +34,10 @@ public class UserAPIController {
     private void userName() {
         get("user/name", (req, res) ->
                 connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/name", req, res));
+    }
+
+    private void postBook() {
+        get("user/post", (req, res) ->
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/post", req, res));
     }
 }
