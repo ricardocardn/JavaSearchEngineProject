@@ -1,6 +1,6 @@
 package api;
 
-import controller.ConnectionHandler;
+import controller.connections.ConnectionHandler;
 import controller.connections.HTTPConnectionHandler;
 
 import static spark.Spark.*;
@@ -21,6 +21,7 @@ public class UserAPIController {
 
     private void handleUserAPI() {
         userLogin();
+        userSignUp();
         userName();
         postBook();
         getBooks();
@@ -30,6 +31,11 @@ public class UserAPIController {
     private void userLogin() {
         get("user/login", (req, res) ->
                 connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/login", req, res, "GET"));
+    }
+
+    private void userSignUp() {
+        get("user/login", (req, res) ->
+                connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/sign-up", req, res, "GET"));
     }
 
     private void userName() {

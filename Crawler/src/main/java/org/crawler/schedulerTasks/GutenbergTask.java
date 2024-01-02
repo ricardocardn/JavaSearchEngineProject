@@ -21,7 +21,11 @@ public class GutenbergTask extends TimerTask {
         int lastFileID = new LocalFileHandler().getLastFileIdInLastDirectory() + 1;
         for (int i = lastFileID; i < amountOfBooks + lastFileID; i++) {
             System.out.println("Downloading book with ID: " + i);
-            handleSingleBook(i);
+            try {
+                handleSingleBook(i);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

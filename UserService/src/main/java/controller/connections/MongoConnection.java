@@ -18,7 +18,9 @@ public class MongoConnection {
     }
 
     private MongoCollection<Document> getMongoConnection() {
-        MongoClient mongoClient = MongoClients.create("mongodb://mongodb-container:27017");
+        String connectionURL = String.format("mongodb+srv://ricardocardenesp:%s@libookusercluster.abhhtfe.mongodb.net/?retryWrites=true&w=majority",
+                                System.getenv("MONGO_ATLAS_PASSWORD"));
+        MongoClient mongoClient = MongoClients.create(connectionURL);
         MongoDatabase database = mongoClient.getDatabase("users_database");
         return database.getCollection("users");
     }

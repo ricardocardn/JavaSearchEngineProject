@@ -1,21 +1,20 @@
 package controller.connections;
 
-import controller.ConnectionHandler;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import spark.Request;
 import spark.Response;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
-import java.util.Scanner;
 
 public class HTTPConnectionHandler implements ConnectionHandler {
-    public HTTPConnectionHandler() {}
 
     @Override
     public String makeUrlRequest(String apiUrl, Request request, Response response, String method) {
@@ -23,62 +22,50 @@ public class HTTPConnectionHandler implements ConnectionHandler {
             String finalUrl = buildUrlWithQueryParams(apiUrl, request.queryMap().toMap());
             System.out.println(finalUrl);
 
-            URL url = new URL(finalUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod(method);
-            setSession(request, connection);
+            CloseableHttpClient httpClient = HttpClients.createDefault();
 
-            if (method.equals("POST"))
-                setConnectionBody(request, connection);
+            HttpResponse httpResponse = null;
 
-            int responseCode = connection.getResponseCode();
+            if (method.equals("POST")) {
+                HttpPost httpPost = new HttpPost(finalUrl);
+                setSession(request, httpPost);
+                httpPost.setEntity(new StringEntity(request.body()));
+                httpResponse = httpClient.execute(httpPost);
 
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                setCookiesToResponse(response, connection);
+            } else if (method.equals("GET")) {
+                HttpGet httpGet = new HttpGet(finalUrl);
+                setSession(request, httpGet);
+                httpResponse = httpClient.execute(httpGet);
+            }
 
-                Scanner scanner = new Scanner(connection.getInputStream());
-                StringBuilder res = new StringBuilder();
-                while (scanner.hasNextLine()) {
-                    res.append(scanner.nextLine());
-                }
-                scanner.close();
-                return res.toString();
+            int responseCode = httpResponse.getStatusLine().getStatusCode();
+
+            if (responseCode == 200) {
+                HttpEntity entity = httpResponse.getEntity();
+                return EntityUtils.toString(entity);
+            } else {
+                throw new RuntimeException(String.valueOf(responseCode));
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             return "Exception: " + e.getMessage();
         }
-
-        return "";
     }
 
-    private void setConnectionBody(Request request, HttpURLConnection connection) throws IOException {
-        connection.setDoOutput(true);
-
-        connection.setUseCaches( false );
-        try( DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
-            wr.write(request.bodyAsBytes());
-        }
-
-    }
-
-    private void setSession(Request request, HttpURLConnection connection) {
+    private void setSession(Request request, HttpPost httpPost) {
         String session = getSession(request);
 
-        if (session != null)
-            connection.setRequestProperty("Cookie", String.format("Session=%s", session));
+        if (session != null) {
+            httpPost.setHeader("Cookie", String.format("Session=%s", session));
+        }
     }
 
-    private void setCookiesToResponse(Response response, HttpURLConnection connection) {
-        String cookieHeader = connection.getHeaderField("Set-Cookie");
+    private void setSession(Request request, HttpGet httpGet) {
+        String session = getSession(request);
 
-        if (cookieHeader != null) {
-            String[] cookies = cookieHeader.split(";\\s*");
-            for (String cookie : cookies) {
-                String[] cookieValues = cookie.split("=");
-                response.cookie(cookieValues[0], cookieValues[1]);
-            }
+        if (session != null) {
+            httpGet.setHeader("Cookie", String.format("Session=%s", session));
         }
     }
 
@@ -107,7 +94,9 @@ public class HTTPConnectionHandler implements ConnectionHandler {
         String session = null;
         try {
             session = request.cookie("Session");
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return session;
     }
 }

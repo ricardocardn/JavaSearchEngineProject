@@ -1,5 +1,4 @@
 import api.APIController;
-
 import javax.jms.JMSException;
 
 public class UserServiceMain {

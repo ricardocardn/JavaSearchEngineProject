@@ -1,0 +1,13 @@
+LiBook Original Books
+
+Title: %s
+
+Author: %s
+
+Release date: %s
+
+Language: %s
+
+Original publication: LiBook
+
+*** START OF THE LiBOOK ***

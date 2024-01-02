@@ -1,4 +1,4 @@
-package controller;
+package controller.connections;
 
 import spark.Request;
 import spark.Response;

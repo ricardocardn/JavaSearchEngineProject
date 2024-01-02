@@ -2,6 +2,8 @@ package controller.bookhandler;
 
 import com.mongodb.client.model.Filters;
 import controller.connections.MongoConnection;
+import controller.http.connections.ConnectionHandler;
+import controller.http.connections.HTTPConnectionHandler;
 import model.Book;
 import model.BookInfo;
 import model.User;
@@ -14,13 +16,13 @@ import java.util.Objects;
 
 public final class MongoBookHandler implements DatamartBookHandler {
     private final MongoConnection datamartConnection;
-    //private final Publisher publisher;
+    private final ConnectionHandler httpConnectionHandler;
+    private final String SERVER_API_URL;
 
     public MongoBookHandler(MongoConnection datamartConnection) throws JMSException {
         this.datamartConnection = datamartConnection;
-        String SERVER_MQ_PORT = System.getenv("SERVER_MQ_PORT");
-        String SERVER_API_URL = System.getenv("SERVER_API_URL");
-        //publisher = new EventPublisher(SERVER_MQ_PORT, "datalakeEvents", SERVER_API_URL);
+        this.httpConnectionHandler = new HTTPConnectionHandler();
+        this.SERVER_API_URL = System.getenv("SERVER_API_URL");
     }
 
     @Override
@@ -44,6 +46,9 @@ public final class MongoBookHandler implements DatamartBookHandler {
             for (Document existingDocument : existingDocuments) {
                 userBooks.add(new BookInfo(
                         (String) existingDocument.get("name"),
+                        (String) existingDocument.get("author"),
+                        (String) existingDocument.get("date"),
+                        (String) existingDocument.get("language"),
                         (Boolean) existingDocument.get("status")
                 ));
             }
@@ -60,8 +65,13 @@ public final class MongoBookHandler implements DatamartBookHandler {
     }
 
     private void setNewBook(User user, Book book, List<Document> existingDocuments) {
+        httpConnectionHandler.makeUrlRequest("post", book);
+
         Document newDocument = new Document()
                 .append("name", book.name())
+                .append("author", book.name())
+                .append("date", book.name())
+                .append("language", book.name())
                 .append("status", book.status())
                 .append("content", book.content());
 
@@ -72,7 +82,6 @@ public final class MongoBookHandler implements DatamartBookHandler {
                 new Document("$set", new Document("documents", existingDocuments))
         );
 
-        //publisher.publish("Content/" + book.name());
     }
 
     private List<Document> getDocuments(Document userDocument) {
@@ -82,10 +91,6 @@ public final class MongoBookHandler implements DatamartBookHandler {
             existingDocuments = new ArrayList<>();
         }
         return existingDocuments;
-    }
-
-    public MongoConnection datamartConnection() {
-        return datamartConnection;
     }
 
     @Override

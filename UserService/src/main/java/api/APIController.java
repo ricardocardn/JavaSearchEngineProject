@@ -82,6 +82,7 @@ public class APIController {
         });
     }
 
+
     private void postDocument() {
         post("user/post", (req, res) -> {
             String session = req.cookie("Session");
@@ -91,12 +92,15 @@ public class APIController {
                     return "User logged out";
 
                 String name = "u_" + user.username() + "_" + req.queryParams("name");
+                String author = user.username();
+                String language = req.queryParams("language");
+                String date = req.queryParams("date");
                 Boolean status = Boolean.valueOf(req.queryParams("status"));
                 String content = req.body();
 
-                Book book = new Book(name, status, content);
+                Book book = new Book(name, author, date, language, content, status);
                 bookHandler.addBookToUser(user, book);
-                return String.format("Added book %s (public: %s) to user %s",
+                return String.format("Added book %s (public: %s) from user %s",
                         book.name(),
                         book.status(),
                         user.username());

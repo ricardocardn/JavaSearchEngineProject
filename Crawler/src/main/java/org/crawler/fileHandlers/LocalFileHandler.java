@@ -21,11 +21,17 @@ public class LocalFileHandler implements FileHandler{
 
     @Override
     public void saveDocument(Document bookDocument, int bookID) throws IOException {
-        createFile(bookDocument, bookID);
-        publishFileAddition(bookID);
+        createFile(bookDocument.text(), String.valueOf(bookID));
+        publishFileAddition(String.valueOf(bookID));
     }
 
-    private void publishFileAddition(int bookID) {
+    @Override
+    public void saveDocument(String content, String name) throws IOException {
+        createFile(content, name);
+        publishFileAddition(name);
+    }
+
+    private void publishFileAddition(String bookID) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDate = sdf.format(new Date());
         filePublisher.publish( bookID + ".txt");
@@ -43,10 +49,10 @@ public class LocalFileHandler implements FileHandler{
 
     }
 
-    private void createFile(Document bookDocument, int bookID) throws IOException{
+    private void createFile(String bookDocument, String bookID) throws IOException{
         String filePath = DOCUMENT_REPOSITORY_PATH + bookID + ".txt";
         FileWriter writer = new FileWriter(filePath);
-        writer.write(bookDocument.text());
+        writer.write(bookDocument);
         writer.close();
     }
 
