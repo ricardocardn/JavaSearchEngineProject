@@ -65,13 +65,14 @@ public final class MongoBookHandler implements DatamartBookHandler {
     }
 
     private void setNewBook(User user, Book book, List<Document> existingDocuments) {
-        httpConnectionHandler.makeUrlRequest("post", book);
+        if (book.status())
+            httpConnectionHandler.makeUrlRequest("post", book);
 
         Document newDocument = new Document()
                 .append("name", book.name())
-                .append("author", book.name())
-                .append("date", book.name())
-                .append("language", book.name())
+                .append("author", book.author())
+                .append("date", book.date())
+                .append("language", book.language())
                 .append("status", book.status())
                 .append("content", book.content());
 
@@ -86,7 +87,6 @@ public final class MongoBookHandler implements DatamartBookHandler {
 
     private List<Document> getDocuments(Document userDocument) {
         List<Document> existingDocuments = (List<Document>) userDocument.get("documents");
-        System.out.println(existingDocuments);
         if (existingDocuments == null) {
             existingDocuments = new ArrayList<>();
         }

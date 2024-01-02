@@ -4,12 +4,7 @@ FROM maven:3.8.4-openjdk-17-slim
 # Set the working directory within the container
 WORKDIR /app
 
-# Copy the POM file and source code
-COPY pom.xml /app
-COPY src /app/src
-
-# Define a volume to mount the host directory
-VOLUME /home/adambreznen/OneDrive/DocumentsRepository
+COPY . /app
 
 # Build the project
 RUN mvn clean package

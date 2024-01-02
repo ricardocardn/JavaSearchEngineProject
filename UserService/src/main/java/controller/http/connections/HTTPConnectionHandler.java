@@ -27,7 +27,6 @@ public class HTTPConnectionHandler implements ConnectionHandler {
     public String makeUrlRequest(String path, Book book) {
         try {
             String finalUrl = buildUrlWithQueryParams(path, book);
-            System.out.println(finalUrl);
 
             CloseableHttpClient httpClient = HttpClients.createDefault();
 
