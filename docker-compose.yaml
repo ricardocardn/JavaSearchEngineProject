@@ -1,40 +1,24 @@
 version: '3'
 
 services:
-  mq-container:
-    image: breznadam/mq-container
+  mongodb-container:
+    image: mongo
     ports:
-      - "61616:61616"
-      - "8161:8161"
-    container_name: mq-container
+      - "27017:27017"
+    container_name: mongobd-container
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://mq-container:8161"]
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
       interval: 10s
-      timeout: 10s
       retries: 3
 
-  crawler:
-    image: breznadam/crawler
-    volumes:
-      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
-    depends_on:
-      mq-container:
-        condition: service_healthy
-  
-  cleaner:
-    image: breznadam/cleaner:2.0
+
+  user-service:
+    image: ricardocardn/user-service
     ports:
       - "80:8080"
-    volumes:
-      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
+    environment:
+      SERVER_MQ_PORT: 443
+      SERVER_API_URL: http://34.16.187.84
     depends_on:
-      mq-container:
-        condition: service_healthy
-
-  indexer:
-    image: breznadam/indexer-cloud
-    volumes:
-      - /home/adambreznen/OneDrive/DocumentsRepository:/app/DocumentsRepository
-    depends_on:
-      mq-container:
+      mongodb-container:
         condition: service_healthy

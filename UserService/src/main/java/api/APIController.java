@@ -1,30 +1,32 @@
 package api;
 
 import com.google.gson.Gson;
-import controller.MongoConnection;
+import controller.connections.MongoConnection;
 import controller.bookhandler.DatamartBookHandler;
 import controller.bookhandler.MongoBookHandler;
-import controller.loaders.MongoUserLoader;
-import controller.loaders.UserLoader;
 import controller.loggers.MongoUserLogger;
 import controller.loggers.UserLogger;
+import controller.registers.MongoUserRegister;
+import controller.registers.UserRegister;
 import controller.sessions.SessionHandler;
 import controller.sessions.cookie.SessionHazelcastHandler;
 import model.Book;
 import model.User;
 
+import javax.jms.JMSException;
+
 import static spark.Spark.*;
 
 public class APIController {
     private final UserLogger logger;
-    private final UserLoader loader;
+    private final UserRegister register;
     private final DatamartBookHandler bookHandler;
     private final SessionHandler sessionHandler;
 
-    public APIController() {
+    public APIController() throws JMSException {
         MongoConnection mongoConnection = new MongoConnection();
         logger = new MongoUserLogger(mongoConnection);
-        loader = new MongoUserLoader(mongoConnection);
+        register = new MongoUserRegister(mongoConnection);
         bookHandler = new MongoBookHandler(mongoConnection);
         sessionHandler = new SessionHazelcastHandler();
     }
@@ -32,6 +34,7 @@ public class APIController {
     public void run() {
         port(8080);
         login();
+        signUp();
         getUserName();
         postDocument();
         getDocuments();
@@ -40,12 +43,24 @@ public class APIController {
 
     private void login() {
         get("user/login", (req, res) -> {
-            String session = logger.logUser(req.queryParams("username"), req.queryParams("password"));
-            if (session != null) {
+            try {
+                String session = logger.logUser(req.queryParams("username"), req.queryParams("password"));
                 res.cookie("Session", session);
                 return "User logged successfully";
-            } else {
-                return "The given credentials are incorrect";
+            } catch (Exception e) {
+                return e.getMessage();
+            }
+        });
+    }
+
+    private void signUp() {
+        get("user/sign-up", (req, res) -> {
+            try {
+                String session = register.register(req.queryParams("username"), req.queryParams("password"));
+                res.cookie("Session", session);
+                return "User logged successfully";
+            } catch (Exception e) {
+                return e.getMessage();
             }
         });
     }

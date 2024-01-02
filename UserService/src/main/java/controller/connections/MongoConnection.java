@@ -1,4 +1,4 @@
-package controller;
+package controller.connections;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -18,7 +18,7 @@ public class MongoConnection {
     }
 
     private MongoCollection<Document> getMongoConnection() {
-        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+        MongoClient mongoClient = MongoClients.create("mongodb://mongodb-container:27017");
         MongoDatabase database = mongoClient.getDatabase("users_database");
         return database.getCollection("users");
     }

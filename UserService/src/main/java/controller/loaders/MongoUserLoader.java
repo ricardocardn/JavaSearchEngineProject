@@ -1,9 +1,10 @@
 package controller.loaders;
 
 import com.mongodb.client.model.Filters;
-import controller.MongoConnection;
+import controller.connections.MongoConnection;
 import model.User;
 import org.bson.Document;
+import org.mindrot.jbcrypt.BCrypt;
 
 public record MongoUserLoader(MongoConnection datamartConnection) implements UserLoader {
     @Override
@@ -13,7 +14,7 @@ public record MongoUserLoader(MongoConnection datamartConnection) implements Use
         if (user != null) {
             String userpass = user.getString("password");
 
-            if (password.equals(userpass)) return new User(username);
+            if (BCrypt.checkpw(password, userpass)) return new User(username);
             else return new User("");
         } else return null;
     }
