@@ -1,24 +1,24 @@
 version: '3'
 
 services:
-  mongodb-container:
-    image: mongo
+  mq-container:
+    image: breznadam/mq-container
     ports:
-      - "27017:27017"
-    container_name: mongobd-container
+      - "61616:61616"
+      - "8161:8161"
+    container_name: mq-container
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
-      interval: 10s
+      test: ["CMD-SHELL", "curl -f http://mq-container:8161"]
+      interval: 3s
+      timeout: 10s
       retries: 3
 
-
-  user-service:
-    image: ricardocardn/user-service
+  crawler:
+    image: ricardocardn/crawler
     ports:
-      - "80:8080"
-    environment:
-      SERVER_MQ_PORT: 443
-      SERVER_API_URL: http://34.16.187.84
+      - "80:80"
+    volumes:
+      - /home/ricardocardenes12/DocumentRepository:/app/DocumentsRepository
     depends_on:
-      mongodb-container:
+      mq-container:
         condition: service_healthy
