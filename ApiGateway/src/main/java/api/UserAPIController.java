@@ -34,7 +34,7 @@ public class UserAPIController {
     }
 
     private void userSignUp() {
-        get("user/login", (req, res) ->
+        get("user/sign-up", (req, res) ->
                 connectionHandler.makeUrlRequest(USER_SERVICE_API + "user/sign-up", req, res, "GET"));
     }
 

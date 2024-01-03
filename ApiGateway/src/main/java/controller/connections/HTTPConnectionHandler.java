@@ -1,5 +1,6 @@
 package controller.connections;
 
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -40,6 +41,8 @@ public class HTTPConnectionHandler implements ConnectionHandler {
 
             int responseCode = httpResponse.getStatusLine().getStatusCode();
 
+            setSessionToResponse(response, httpResponse);
+
             if (responseCode == 200) {
                 HttpEntity entity = httpResponse.getEntity();
                 return EntityUtils.toString(entity);
@@ -66,6 +69,19 @@ public class HTTPConnectionHandler implements ConnectionHandler {
 
         if (session != null) {
             httpGet.setHeader("Cookie", String.format("Session=%s", session));
+        }
+    }
+
+    private void setSessionToResponse(Response response, HttpResponse httpResponse) {
+        Header[] cookieHeaders = httpResponse.getHeaders("Set-Cookie");
+        for (Header header : cookieHeaders) {
+            String cookie = header.getValue().split("=")[0];
+            try {
+                String cookieValue = header.getValue().split("=")[1];
+                response.cookie(cookie, cookieValue);
+            } catch (Exception e) {
+                response.cookie(cookie, "");
+            }
         }
     }
 
